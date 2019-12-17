@@ -1,0 +1,14 @@
+pipline{
+    agent any
+    stages{
+        stage("Test"){
+            echo 'Testing Phase'
+        }
+        stage("QA"){
+            echo 'QA Phase'
+        }
+        stage("Deploy"){
+            echo 'Deploy Phase'
+        }
+    }
+}

@@ -1,3 +1,2 @@
 <?php
-echo "sample php code is being developed"
-
+echo "sample php code is being developed";
