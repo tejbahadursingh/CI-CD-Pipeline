@@ -9,8 +9,8 @@ class ValidateOutputTest extends TestCase {
         $this->assertNotEmpty($objValidateOutput->outputString());
     }
 
-    public function testOutputStingFail(){
-        $objValidateOutput = new \source\ValidateOutput();
-        $this->assertEmpty($objValidateOutput->outputString());
-    }
+    // public function testOutputStingFail(){
+    //     $objValidateOutput = new \source\ValidateOutput();
+    //     $this->assertEmpty($objValidateOutput->outputString());
+    // }
 }
