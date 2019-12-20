@@ -1,14 +1,26 @@
 pipline{
     agent any
     stages{
-        stage("Test"){
-            echo 'Testing Phase'
+        stage("Build"){
+            step{
+                echo "Starting Build"
+                sh "composer install"
+                echo "Finished build"
+            }
         }
-        stage("QA"){
-            echo 'QA Phase'
+        stage("Test"){
+            echo "Starting Test case execution"
+            sh "./vendor/bin/phpunit ./tests/ValidateOutputTest.php"
+            echo "Finish Test case execution"
         }
         stage("Deploy"){
-            echo 'Deploy Phase'
+            echo "Starting deploy"
+            sh """
+                cd /var/www/html/CI-CD-Pipeline
+                git pull https://tejbahadursingh@TejNitor2012github.com/tejbahadursingh/CI-CD-Pipeline.git master
+                composer install
+            """
+            echo "Finished Deployment"
         }
     }
 }
