@@ -22,7 +22,7 @@ pipline{
                 sh """
                     cd /var/www/html/CI-CD-Pipeline
                     git pull https://tejbahadursingh@TejNitor2012github.com/tejbahadursingh/CI-CD-Pipeline.git master
-                    composer install
+                    composer install                    
                 """
                 echo "Finished Deployment"
             }
